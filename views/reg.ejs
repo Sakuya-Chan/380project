@@ -1,0 +1,33 @@
+<head>
+    <meta charset="UTF-8"> 
+    <title>Register</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div id="abc">
+        <p class="stitle">Register</p>
+        <br>
+        <span style="color:rgb(255, 81, 81) ;">
+            <%=warning%>
+        </span>
+        <form action="/reg" method="post" id="f1">
+
+            <div class="inputbox">
+                <input type="text" name="uname" placeholder="Your userID" required>
+
+            </div>
+
+            <br>
+            <input type="password" name="pass" placeholder="Your password" required>
+
+        </form>
+        <button type="submit" form="f1">Sign-in</button>
+
+
+
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,48 @@
+<html>
+
+<head>
+    <meta charset="UTF-8"> 
+    <title>Edit</title>
+    <link rel="stylesheet" href="style.css">
+    
+        
+    </script>
+</head>
+
+<body>
+    <div id="abc">
+        <p>Edit Mode</p>
+        <span style="color:rgb(255, 81, 81) ;">
+            <%=msg%>
+        </span><br>
+        you are editing:<br>
+        <%= doc.Title %><br>
+
+        ID:<%= doc.HEBID %><br>
+        <form action="/edit" method="post" id="f2">
+            HEBID:<br>
+            <input type="text" value="<%=doc.HEBID%>" style="width:500px" name ="HEBID" required><br>
+            Title:<br>
+            <textarea cols="30" rows="5"style="width:500px" name ="Title" required><%= doc.Title %></textarea><br>
+            Author:<br>
+            <input type="text" value="<%=doc.Author%>" style="width:500px" name ="Author" required><br>
+            publisher:<br>
+            <input type="text" value="<%=doc.Publisher%>" style="width:500px" name ="Publisher" required><br>
+            PublishYear:<br>
+            <input type="text" value="<%=doc.PubYear%>" style="width:500px" name ="PubYear" required><br>
+            Publish location:<br>
+            <input type="text" value="<%=doc.LocationPublished%>" style="width:500px" name ="LocationPublished" required><br>
+            Subject:<br>
+            <input type="text" value="<%=doc.Subject%>" style="width:500px" name ="Subject" required><br>
+            Handle:<br>
+            <input type="text" value="<%=doc.Handle%>" style="width:500px" name ="Handle" required><br>
+            ISBN:<br>
+            <input type="text" value="<%=doc.ISBNs%>" style="width:500px" name = "ISBNs" required><br>
+            <input type="hidden" value="<%=doc._id%>" name="_id" required>
+    </form>
+        <button type="submit" form="f2">submit</button>
+        <button type="back" onclick="location.href='/';">back</button>
+    </div>
+</body>
+
+</html>

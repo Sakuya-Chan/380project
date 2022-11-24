@@ -1,0 +1,67 @@
+<html>
+
+<head >
+  <meta charset="UTF-8"> 
+  <title>Catalogue</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <p class="stitle"> welcome, <%=user%></p>
+ 
+  
+  <form action="/logout" method="post" id="lgot"> </form>
+  <span style="margin: auto">
+  <form action="/create" method="get" id="crat"></form>
+  <button form="lgot">logout</button>
+  <button form="crat">create new document</button><br>
+  
+</span>
+  <div id="abc">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>HEBID</th>
+          <th>Author</th>
+          <th>Title</th>
+          <th>ISBN</th>
+          <th>Subject</th>
+          <th>action</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% for(var i=0; i < doc.length; i++) { %>
+          <tr>
+            <td>
+              <%= doc[i].HEBID %>
+            </td>
+            <td>
+              <%= doc[i].Author %>
+            </td>
+            <td>
+              <%= doc[i].Title %>
+            </td>
+            <td>
+              <%= doc[i].ISBNs %>
+            </td>
+            <td>
+              <%= doc[i].Subject %>
+            </td>
+            <td>
+              <% var b=doc[i]._id %>
+              
+              <a href="/edit<%=b%>">edit</a>
+              
+              <a href="/del<%=b%>" >delete</a>
+              
+              
+            </td>
+          </tr>
+          <% } %>
+      </tbody>
+    </table>
+  </div>
+</body>
+
+</html>
